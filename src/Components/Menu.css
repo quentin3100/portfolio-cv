@@ -1,0 +1,340 @@
+
+.menu-container > .overlay,
+.menu-container.active > .overlay {
+  position: absolute;
+  right: 0;
+  height: calc( 100vh - 120px );
+  width: calc( 100vw - 120px );
+  background: #fafafa;
+}
+
+.menu-container.active > .overlay {
+  animation: overlay-slide-in 300ms forwards 300ms;
+}
+
+@keyframes overlay-slide-in {
+  from {
+    width: calc( 100vw - 120px );
+  }
+  to {
+    width: 0;
+  }
+}
+
+.menu-container > .overlay {
+  animation: overlay-slide-out 300ms forwards;
+}
+
+@keyframes overlay-slide-out {
+  from {
+    left: 0;
+    width: 0;
+  }
+  to {
+    left: 0;
+    width: calc( 100vw - 120px );
+  }
+}
+
+
+.menu-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: #000000;
+  border: 60px solid #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+a {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+.menu-container::before,
+.menu-container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+.menu-container::before {
+  /*background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Stars.svg?sanitize=true);*/
+}
+
+.menu-container::after {
+ /* background: url(../../public/Img/Navbar/9058423.jpg) bottom repeat-x;*/
+ 
+}
+
+.menu-container.deactive {
+  animation: fade-out 600ms forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    z-index: 999;
+  }
+  50% {
+    opacity: 1;
+    z-index: 999;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.menu-container.active {
+  animation: fade-in 300ms forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    z-index: -1;
+  }
+  to {
+    opacity: 1;
+    z-index: 999;
+  }
+}
+
+/***** Menu Items: Animation *****/
+.menu-container ul,
+.menu-container .social {
+  margin-left: -80px;
+  opacity: 0;
+  animation: slide-out 200ms forwards;
+}
+
+.menu-container ul {
+  list-style-type: none !important;
+  font-size: 3rem;
+}
+
+@keyframes slide-out {
+  from {
+    opacity: 1;
+    margin-left: 0px;
+  }
+  to {
+    opacity: 0;
+    margin-left: -80px;
+  }
+}
+
+.menu-container.active ul,
+.menu-container.active .social {
+  animation: slide-in 300ms forwards 600ms;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    margin-left: -80px;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+/***** Menu Items: Hover Animation *****/
+.menu-container ul li {
+  border-left: .2rem solid transparent;
+  transition: border-left 200ms;
+}
+
+.menu-container ul li a {
+  font-size: 3rem; 
+  padding-left: .5rem;
+}
+
+.menu-container ul li a::after {
+  content: ' »';
+  font-size: 2.5rem;
+  color: transparent;
+  transition: color 200ms;
+  overflow: hidden;
+}
+
+.menu-container ul li a:hover::after {
+  content: ' »';
+  color: #f300b4;
+  overflow: hidden;
+}
+
+.social {
+  padding: 1rem 0 0 .5rem;
+}
+
+.social a {
+  font-size: 1.5rem;
+  padding: .2rem;
+}
+
+.menu-container a,
+.menu-container a:visited {
+  color: #fafafa;
+}
+
+.menu-container a:hover,
+.menu-container a:active {
+  color: #f300b4;
+}
+
+@media only screen and (max-width: 649px) {
+  .menu-container {
+    border: none;
+  }
+
+  .menu-container > .overlay,
+  .menu-container.active > .overlay {
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .menu-container.active > .overlay {
+    animation: overlay-slide-in 300ms forwards 300ms;
+  }
+  
+  @keyframes overlay-slide-in {
+    from {
+      width: 100vw;
+    }
+    to {
+      width: 0;
+    }
+  }
+  
+  .menu-container > .overlay {
+    animation: overlay-slide-out 300ms forwards;
+  }
+  
+  @keyframes overlay-slide-out {
+    from {
+      left: 0;
+      width: 0;
+    }
+    to {
+      left: 0;
+      width: 100vw;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*****************
+ *****************
+    NAV STYLES
+ *****************
+ *****************/
+
+#navbar {
+  z-index: 9999;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#navbar.bg-active {
+  background: #181d23;
+}
+
+#navbar .nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  padding: 0 2rem;
+}
+
+#navbar .brand {
+  font-size: 1.6rem;
+  color: #fafafa;
+  cursor: default;
+}
+
+/***** Menu Button *****/
+.menu-button {
+  position: relative;
+  height: 22px;
+  width: 30px;
+  outline: none;
+}
+
+.menu-button span,
+.menu-button span::before,
+.menu-button span::after {
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 3px;
+  background: #fafafa;
+  transition: 500ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.menu-button span {
+  position: relative;
+  display: block;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+
+.menu-button span::before {
+  top: -8px;
+}
+
+.menu-button span::after {
+  top: 8px;
+}
+
+.menu-button:hover > span,
+.menu-button:hover > span::before,
+.menu-button:hover > span::after {
+  background: #f300b4;
+}
+
+.menu-button.active > span  {
+  background: transparent;
+}
+
+.menu-button.active > span::before  {
+  transform: rotate(-225deg);
+  top: 0px;
+}
+
+.menu-button.active > span::after  {
+  transform: rotate(225deg);
+  top: 0px;
+}
+
+@media only screen and (max-width: 849px) {
+  #navbar {
+    background: #181d23aa;
+  }
+}
+
+
+

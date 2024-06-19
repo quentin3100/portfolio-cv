@@ -1,0 +1,34 @@
+#navbar  {
+    background: #000000;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+  }
+  
+  .brand {
+    display: inline;
+    text-align: left; 
+  }
+  
+  .menu-button {
+    cursor: pointer;
+  }
+  
+  .menu-button span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+  }
+  
+
+ 
+  
+ 
+  

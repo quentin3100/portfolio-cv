@@ -1,0 +1,97 @@
+/* AllProjectsPage.css */
+
+.all-projects {
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .project-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-name {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333333;
+  }
+  
+  .project-description {
+    font-size: 1em;
+    color: #666666;
+  }
+  
+  .view-project-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .view-project-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .back-to-home-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .back-to-home-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .back-to-projects-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    }
+    
+    .back-to-projects-button
+    {
+    background-color: #0056b3;
+    }
